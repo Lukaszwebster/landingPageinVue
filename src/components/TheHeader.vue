@@ -1,6 +1,10 @@
+<script setup>
+const isMenuOpen = ref(false)
+</script>
+
 <template>
   <header class="font-poppins">
-    <ThePopUpWindowFromHamburgerMenu is-open />
+    <ThePopUpWindowFromHamburgerMenu :is-open="isMenuOpen" />
     <nav
       class="ml-4 mr-4 mt-8 flex items-center justify-between md:ml-20 md:mr-20 sm:ml-14 sm:mr-14 sm:justify-between"
     >
@@ -22,13 +26,16 @@
         <button class="text-grayishViolet">
           Login
         </button>
-        <button
+        <!-- <button
           class="ml-2 rounded-3xl bg-cyan pb-2 pl-4 pr-4 pt-2 text-white hover:bg-teal-200"
         >
           Sign Up
-        </button>
+        </button> -->
+        <AppButton class="ml-2">
+          Sign Up
+        </AppButton>
       </div>
-      <button class="hamburger sm:hidden">
+      <button type="button" class="hamburger sm:hidden" @click="isMenuOpen = !isMenuOpen">
         <img class="h-8" src="public/bars-solid.svg" alt="menu hamburger">
       </button>
     </nav>

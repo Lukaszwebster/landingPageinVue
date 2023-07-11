@@ -1,6 +1,7 @@
 <script setup>
-const props = defineProps(['isOpen'])
-console.log(props.isOpen)
+const props = defineProps({
+  isOpen: Boolean,
+})
 </script>
 
 <template>
